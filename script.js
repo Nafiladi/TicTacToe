@@ -5,7 +5,7 @@ const characters = {
     Hao: { health: 80, energy: 80, oxygen: 100, description: "Strong, Black... He once won a staring contest with a mirror!" },
     Steve: { health: 90, energy: 85, oxygen: 100, description: "Calm, Analytical... Can even calm a raging coffee machine!" },
     Jaden: { health: 80, energy: 120, oxygen: 100, description: "Fast, Engaging... Always has a swim at the ready!" },
-    Albert: { health: 165, energy: 55, oxygen: 100, description: "slow, Focused... He's chasing his dreams, one NHLin at a time!" },
+    Albert: { health: 165, energy: 65, oxygen: 100, description: "slow, Focused... He's chasing his dreams, one NHLin at a time!" },
     Noah: { health: 80, energy: 85, oxygen: 100, description: "Smart, Slow... Could outsmart a fridge in a power cut!" },
     Galvin: { health: 85, energy: 80, oxygen: 100, description: "Fearless, Brave... Once tried to pet a e-gi**!" },
     Nevin: { health: 70, energy: 70, oxygen: 100, description: "Slow, Calm... Knows the best Skibidi Watcher!" },
@@ -21,7 +21,7 @@ const characters = {
     Iris: { health: 80, energy: 70, oxygen: 100, description: "Wise, Calm... Should probably run a meditation retreat!" },
     Fredrick: { health: 70, energy: 95, oxygen: 100, description: "Unique, Energyful... Could sell sand in a desert!" },
     Eddy: { health: 85, energy: 120, oxygen: 100, description: "Fun, Innovative... Can turn any event into a surprise dance party!" },
-    CHZ: { health: 80, energy: 40, oxygen: 100, description: "Mysterious, Intriguing... Might be a part-time superhero!" },
+    CHZ: { health: 80, energy: 80, oxygen: 100, description: "Mysterious, Intriguing... Might be a part-time superhero!" },
 };
 
 
@@ -70,7 +70,7 @@ function calculateNewStatus(character, diceRoll) {
     character.energy = Math.max(0, character.energy - 4);
 }
 
-// Render Status Bars
+
 function renderBars(character) {
     return `
         <div class="bar health" style="--health-percent: ${character.health}%;"><strong>${character.health} HP</strong></div>
