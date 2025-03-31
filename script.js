@@ -84,7 +84,7 @@ function updateStatusDisplay() {
     statusDisplay.innerHTML = `<div class="character-card"><strong>Your Character:</strong><br>${playerCharacter.name}<br>${playerCharacter.description}<br>${renderBars(playerCharacter)}<br><button onclick="activateAbility(playerCharacter)">Activate Ability</button></div>`;
     
     for (const bot of bots) {
-        statusDisplay.innerHTML += `<div class="character-card"><strong>${bot.name} (Bot):</strong><br>${bot.description}<br>${renderBars(bot)}</div>`;
+        statusDisplay.innerHTML += `<div class="character-card"><strong>${bot.name} (character):</strong><br>${bot.description}<br>${renderBars(bot)}</div>`;
     }
 }
 
