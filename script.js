@@ -160,7 +160,7 @@ const characters = {
         description: "Mysterious, Intriguing... Might be a part-time superhero!",
         ability: activateCHZAbility
     },
-    
+    // Add more characters here if needed
 };
 
 // Ability Functions for Characters
