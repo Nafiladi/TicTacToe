@@ -1,174 +1,280 @@
 const characters = {
-    NHLin: { health: 70, energy: 80, oxygen: 100, description: "Weak, Fast... Like a chicken in Ohio!" },
-    BSK: { health: 90, energy: 80, oxygen: 100, description: "Strong, Quick... Like a squirrel in Ohio!" },
-    Darren: { health: 70, energy: 90, oxygen: 100, description: "Quick, Strong... Probably invented sliced bread!" },
-    Hao: { health: 80, energy: 80, oxygen: 100, description: "Strong, Black... He once won a staring contest with a mirror!" },
-    Steve: { health: 90, energy: 85, oxygen: 100, description: "Calm, Analytical... Can even calm a raging coffee machine!" },
-    Jaden: { health: 80, energy: 120, oxygen: 100, description: "Fast, Engaging... Always has a swim at the ready!" },
-    Albert: { health: 165, energy: 55, oxygen: 100, description: "slow, Focused... He's chasing his dreams, one NHLin at a time!" },
-    Noah: { health: 80, energy: 85, oxygen: 100, description: "Smart, Slow... Could outsmart a fridge in a power cut!" },
-    Galvin: { health: 85, energy: 80, oxygen: 100, description: "Fearless, Brave... Once tried to pet a e-gi**!" },
-    Nevin: { health: 70, energy: 70, oxygen: 100, description: "Slow, Calm... Knows the best Skibidi Watcher!" },
-    Jorgina: { health: 85, energy: 65, oxygen: 100, description: "Surprising, Quick... She once jump-started a car with two spoons!" },
-    Vivien: { health: 90, energy: 80, oxygen: 100, description: "Charming, Witty... Could charm the socks off a statue!" },
-    Yanxi: { health: 75, energy: 75, oxygen: 100, description: "Resourceful, Clever... Uses moan to fix everything!" },
-    Junteng: { health: 85, energy: 70, oxygen: 100, description: "Strong, Brave... Wrestled a bear... and lost with a hug!" },
-    Jeff: { health: 145, energy: 60, oxygen: 100, description: "Smart, Analytical, Calm, Fearless, Brave, Fat... Calculates the best NHLin Gyat!" },
-    JeffLai: { health: 80, energy: 65, oxygen: 100, description: "Slow , Ambitious... Can order pizza in zero languages!" },
-    Ethan: { health: 70, energy: 75, oxygen: 100, description: "Quick... Runs like a cheetah... after kfcs!" },
-    Aeryn: { health: 80, energy: 70, oxygen: 100, description: "Ambitious, Driven... Wants to become a professional ice cream taster!" },
-    Javier: { health: 90, energy: 80, oxygen: 100, description: "Bold, Adventurous... Took his goldfish to the beach!" },
-    Iris: { health: 80, energy: 70, oxygen: 100, description: "Wise, Calm... Should probably run a meditation retreat!" },
-    Fredrick: { health: 70, energy: 95, oxygen: 100, description: "Unique, Energyful... Could sell sand in a desert!" },
-    Eddy: { health: 85, energy: 120, oxygen: 100, description: "Fun, Innovative... Can turn any event into a surprise dance party!" },
-    CHZ: { health: 80, energy: 40, oxygen: 100, description: "Mysterious, Intriguing... Might be a part-time superhero!" },
+    NHLin: {
+        health: 70,
+        energy: 80,
+        oxygen: 100,
+        description: "Weak, Fast... Like a chicken in Ohio!",
+        ability: activateNHLinAbility
+    },
+    BSK: {
+        health: 90,
+        energy: 80,
+        oxygen: 100,
+        description: "Strong, Quick... Like a squirrel in Ohio!",
+        ability: activateBSKAbility
+    },
+    Darren: {
+        health: 70,
+        energy: 90,
+        oxygen: 100,
+        description: "Quick, Strong... Probably invented sliced bread!",
+        ability: activateDarrenAbility
+    },
+    Hao: {
+        health: 80,
+        energy: 80,
+        oxygen: 100,
+        description: "Strong, Black... He once won a staring contest with a mirror!",
+        ability: activateHaoAbility
+    },
+    Steve: {
+        health: 90,
+        energy: 85,
+        oxygen: 100,
+        description: "Calm, Analytical... Can even calm a raging coffee machine!",
+        ability: activateSteveAbility
+    },
+    Jaden: {
+        health: 80,
+        energy: 120,
+        oxygen: 100,
+        description: "Fast, Engaging... Always has a swim at the ready!",
+        ability: activateJadenAbility
+    },
+    Albert: {
+        health: 165,
+        energy: 55,
+        oxygen: 100,
+        description: "Slow, Focused... He's chasing his dreams, one NHLin at a time!",
+        ability: activateAlbertAbility
+    },
+    Noah: {
+        health: 80,
+        energy: 85,
+        oxygen: 100,
+        description: "Smart, Slow... Could outsmart a fridge in a power cut!",
+        ability: activateNoahAbility
+    },
+    Galvin: {
+        health: 85,
+        energy: 80,
+        oxygen: 100,
+        description: "Fearless, Brave... Once tried to pet a e-giant!",
+        ability: activateGalvinAbility
+    },
+    Nevin: {
+        health: 70,
+        energy: 70,
+        oxygen: 100,
+        description: "Slow, Calm... Knows the best Skibidi Watcher!",
+        ability: activateNevinAbility
+    },
+    Jorgina: {
+        health: 85,
+        energy: 65,
+        oxygen: 100,
+        description: "Surprising, Quick... She once jump-started a car with two spoons!",
+        ability: activateJorginaAbility
+    },
+    Vivien: {
+        health: 90,
+        energy: 80,
+        oxygen: 100,
+        description: "Charming, Witty... Could charm the socks off a statue!",
+        ability: activateVivienAbility
+    },
+    Yanxi: {
+        health: 75,
+        energy: 75,
+        oxygen: 100,
+        description: "Resourceful, Clever... Uses moan to fix everything!",
+        ability: activateYanxiAbility
+    },
+    Junteng: {
+        health: 85,
+        energy: 70,
+        oxygen: 100,
+        description: "Strong, Brave... Wrestled a bear... and lost with a hug!",
+        ability: activateJuntengAbility
+    },
+    Jeff: {
+        health: 145,
+        energy: 60,
+        oxygen: 100,
+        description: "Smart, Analytical... Calculates the best NHLin Gyat!",
+        ability: activateJeffAbility
+    },
+    JeffLai: {
+        health: 80,
+        energy: 65,
+        oxygen: 100,
+        description: "Slow, Ambitious... Can order pizza in zero languages!",
+        ability: activateJeffLaiAbility
+    },
+    Ethan: {
+        health: 70,
+        energy: 75,
+        oxygen: 100,
+        description: "Quick... Runs like a cheetah... after kfcs!",
+        ability: activateEthanAbility
+    },
+    Aeryn: {
+        health: 80,
+        energy: 70,
+        oxygen: 100,
+        description: "Ambitious, Driven... Wants to become a professional ice cream taster!",
+        ability: activateAerynAbility
+    },
+    Javier: {
+        health: 90,
+        energy: 80,
+        oxygen: 100,
+        description: "Bold, Adventurous... Took his goldfish to the beach!",
+        ability: activateJavierAbility
+    },
+    Iris: {
+        health: 80,
+        energy: 70,
+        oxygen: 100,
+        description: "Wise, Calm... Should probably run a meditation retreat!",
+        ability: activateIrisAbility
+    },
+    Fredrick: {
+        health: 70,
+        energy: 95,
+        oxygen: 100,
+        description: "Unique, Energyful... Could sell sand in a desert!",
+        ability: activateFredrickAbility
+    },
+    Eddy: {
+        health: 85,
+        energy: 120,
+        oxygen: 100,
+        description: "Fun, Innovative... Can turn any event into a surprise dance party!",
+        ability: activateEddyAbility
+    },
+    CHZ: {
+        health: 80,
+        energy: 40,
+        oxygen: 100,
+        description: "Mysterious, Intriguing... Might be a part-time superhero!",
+        ability: activateCHZAbility
+    },
+    
 };
 
-// Game Variables
-let playerCharacter = null;
-let bots = [];
-let gameTurns = 0;
-const maxTurns = 10;
-
-// Initialize Character Selection
-function initCharacterSelection() {
-    const characterSelection = document.getElementById('character-selection');
-    characterSelection.innerHTML = `<h2>Select Your Character</h2>`;
-    for (const name in characters) {
-        characterSelection.innerHTML += `<button class="game-button" onclick="selectCharacter('${name}')">${name}</button>`;
-    }
+// Ability Functions for Characters
+function activateNHLinAbility(character) {
+    character.oxygen += 20;
+    showModal("NHLin used their ability! +20 Oxygen");
 }
 
-// Character Selection
-function selectCharacter(name) {
-    playerCharacter = { name, ...characters[name] }; // Add the name property explicitly
-    alert(`You selected ${name}!`);
-    
-    // Initialize Bots
-    bots = []; // Clear previous bots
-    for (let i = 0; i < 3; i++) {
-        const randomCharacterKey = Object.keys(characters)[Math.floor(Math.random() * Object.keys(characters).length)];
-        const randomCharacter = characters[randomCharacterKey];
-        bots.push({ name: `Bot${i + 1}`, ...randomCharacter }); // Copy all properties, including oxygen
-    }
-
-    // Enable buttons and display status
-    document.getElementById('fortune-button').disabled = false;
-
-    updateStatusDisplay();
+function activateBSKAbility(character) {
+    character.energy += 15;
+    showModal("BSK used their ability! +15 Energy");
 }
 
-// Roll a Dice
-function rollDice() {
-    return Math.floor(Math.random() * 6) + 1;
+function activateDarrenAbility(character) {
+    character.health += 10; // Heals Darren
+    showModal("Darren used their ability! +10 Health");
 }
 
-// Calculate New Status
-function calculateNewStatus(character, diceRoll) {
-    // Calculate new energy and add to oxygen
-    character.oxygen += diceRoll;
-    character.energy = Math.max(0, character.energy - 4);
+function activateHaoAbility(character) {
+    character.oxygen += 15; // Boost oxygen for Hao
+    showModal("Hao used their ability! +15 Oxygen");
 }
 
-// Render Status Bars
-function renderBars(character) {
-    return `
-        <div class="bar health" style="--health-percent: ${character.health}%;"><strong>${character.health} HP</strong></div>
-        <div class="bar energy" style="--energy-percent: ${character.energy}%;"><strong>${character.energy} EN</strong></div>
-        <div class="bar oxygen" style="--oxygen-percent: ${character.oxygen}%;"><strong>${character.oxygen} O2</strong></div>
-    `;
+function activateSteveAbility(character) {
+    character.energy += 20; // Boost energy for Steve
+    showModal("Steve used their ability! +20 Energy");
 }
 
-// Update Status Display
-function updateStatusDisplay() {
-    const statusDisplay = document.getElementById('status-display');
-    statusDisplay.innerHTML = `<div class="character-card"><strong>Your Character:</strong><br>${playerCharacter.name}<br>${playerCharacter.description}<br>${renderBars(playerCharacter)}<br><button onclick="activateAbility(playerCharacter)">Activate Ability</button></div>`;
-    
-    for (const bot of bots) {
-        statusDisplay.innerHTML += `<div class="character-card"><strong>${bot.name} (character):</strong><br>${bot.description}<br>${renderBars(bot)}</div>`;
-    }
+function activateJadenAbility(character) {
+    character.health += 5; // Minor heal for Jaden
+    showModal("Jaden used their ability! +5 Health");
 }
 
-// Activate Ability
-function activateAbility(character) {
-    const abilityEffect = character.ability();
-    character.oxygen += abilityEffect.oxygenBoost;
-    character.energy += abilityEffect.energyBoost;
-    alert(`${character.name} activated their special ability! Energy +${abilityEffect.energyBoost}, Oxygen +${abilityEffect.oxygenBoost}.`);
+function activateAlbertAbility(character) {
+    character.energy += 10; // Healing Albert's energy
+    showModal("Albert used their ability! +10 Energy");
 }
 
-// Trigger Random Event
-function triggerRandomEvent(character) {
-    const events = [
-        "A sudden wind boosts your energy! +10 Energy",
-        "You found an oxygen tank! +15 Oxygen",
-        "A mischievous creature steals your energy! -10 Energy",
-        "You accidentally inhale too much confetti! -5 Oxygen"
-    ];
-    
-    const eventIndex = Math.floor(Math.random() * events.length);
-    
-    if (eventIndex === 0) {
-        character.energy += 10;
-    } else if (eventIndex === 1) {
-        character.oxygen += 15;
-    } else if (eventIndex === 2) {
-        character.energy = Math.max(0, character.energy - 10);
-    } else {
-        character.oxygen = Math.max(0, character.oxygen - 5);
-    }
-
-    alert(events[eventIndex]);
+function activateNoahAbility(character) {
+    character.oxygen += 25; // Oxygen boost for Noah
+    showModal("Noah used their ability! +25 Oxygen");
 }
 
-// Calculate Score
-function calculateScore(character) {
-    return character.health + character.energy + character.oxygen;
+function activateGalvinAbility(character) {
+    character.energy += 10; // Boost Galvin's energy
+    showModal("Galvin used their ability! +10 Energy");
 }
 
-// Display Scores
-function displayScores() {
-    const playerScore = calculateScore(playerCharacter);
-    const botScores = bots.map(bot => calculateScore(bot));
-    alert(`Your total score is: ${playerScore}. Bots' scores are: ${botScores.map((score, index) => `Bot${index + 1}: ${score}`).join(', ')}`);
+function activateNevinAbility(character) {
+    character.health += 15; // Minor heal for Nevin
+    showModal("Nevin used their ability! +15 Health");
 }
 
-// Game Over
-function endGame() {
-    const playerScore = calculateScore(playerCharacter);
-    const botScores = bots.map(bot => calculateScore(bot));
-    const highestScore = Math.max(playerScore, ...botScores);
-    const winner = playerScore === highestScore ? `You` : `Bot ${botScores.indexOf(highestScore) + 1}`;
-
-    const gameOverDiv = document.getElementById('game-over');
-    gameOverDiv.innerHTML = `<h2>Game Over!</h2><p>The winner is: ${winner} with a score of ${highestScore}!</p>`;
-    gameOverDiv.style.display = 'block';
-    document.getElementById('fortune-button').disabled = true;
+function activateJorginaAbility(character) {
+    character.energy += 10; // Boost energy for Jorgina
+    showModal("Jorgina used their ability! +10 Energy");
 }
 
-// Button Click Event for Fortune Action
-document.getElementById('fortune-button').addEventListener('click', () => {
-    if (gameTurns < maxTurns) {
-        gameTurns++;
-        const diceValue = rollDice();
-        calculateNewStatus(playerCharacter, diceValue);
-        triggerRandomEvent(playerCharacter);
+function activateVivienAbility(character) {
+    character.oxygen += 10; // Oxygen boost for Vivien
+    showModal("Vivien used their ability! +10 Oxygen");
+}
 
-        // Bots take their turn
-        bots.forEach(bot => {
-            const botDiceValue = rollDice();
-            calculateNewStatus(bot, botDiceValue);
-            triggerRandomEvent(bot);
-        });
-        
-        updateStatusDisplay();
+function activateYanxiAbility(character) {
+    character.energy += 15; // Boost energy for Yanxi
+    showModal("Yanxi used their ability! +15 Energy");
+}
 
-        if (gameTurns === maxTurns) {
-            displayScores();
-            endGame();
-        }
-    }
-});
+function activateJuntengAbility(character) {
+    character.health += 20; // Heal Junteng
+    showModal("Junteng used their ability! +20 Health");
+}
 
-// Initialize Game on Load
-initCharacterSelection();
+function activateJeffAbility(character) {
+    character.oxygen += 20; // Boost oxygen for Jeff
+    showModal("Jeff used their ability! +20 Oxygen");
+}
+
+function activateJeffLaiAbility(character) {
+    character.energy += 10; // Boost Jeff Lai's energy
+    showModal("JeffLai used their ability! +10 Energy");
+}
+
+function activateEthanAbility(character) {
+    character.oxygen += 5; // Minor oxygen boost
+    showModal("Ethan used their ability! +5 Oxygen");
+}
+
+function activateAerynAbility(character) {
+    character.health += 10; // Heal Aeryn
+    showModal("Aeryn used their ability! +10 Health");
+}
+
+function activateJavierAbility(character) {
+    character.energy += 15; // Boost energy for Javier
+    showModal("Javier used their ability! +15 Energy");
+}
+
+function activateIrisAbility(character) {
+    character.health += 5; // Minor heal for Iris
+    showModal("Iris used their ability! +5 Health");
+}
+
+function activateFredrickAbility(character) {
+    character.oxygen += 15; // Oxygen boost for Fredrick
+    showModal("Fredrick used their ability! +15 Oxygen");
+}
+
+function activateEddyAbility(character) {
+    character.energy += 20; // Boost energy for Eddy
+    showModal("Eddy used their ability! +20 Energy");
+}
+
+function activateCHZAbility(character) {
+    character.oxygen += 10; // Minor oxygen boost
+    showModal("CHZ used their ability! +10 Oxygen");
+}
