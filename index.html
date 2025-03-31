@@ -10,11 +10,32 @@
     <div class="container">
         <h1>Character Fortune Game</h1>
         <div id="character-selection" class="status-display"></div>
-        <div id="status-display" class="status-display" style="display: none;"></div>
-        <div id="event-message"></div>
+        <div id="status-display" class="status-display"></div>
         <button id="fortune-button" class="game-button" disabled>Try Your Fortune!</button>
-        <div id="game-over" class="game-over" style="display: none;"></div>
-        <a href="https://sites.google.com/view/who-is-lick-ball-master/leaderboard" id="leaderboard-link">Leaderboard</a>
+        <div id="game-over" class="game-over" style="display: none;">
+            <h2>Game Over!</h2>
+            <p id="winner-text"></p>
+            <button onclick="playAgain()" class="game-button">Play Again</button>
+        </div>
+        <div id="leaderboard" style="margin-top: 20px;">
+            <h3>Leaderboard</h3>
+            <iframe src="https://sites.google.com/view/who-is-lick-ball-master/leaderboard" frameborder="0" width="100%" height="400"></iframe>
+        </div>
+        <div id="ability-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Active Ability</h3>
+                <p id="ability-description"></p>
+                <button onclick="useAbility()" class="game-button">Use Ability</button>
+                <button onclick="closeModal()" class="game-button">Close</button>
+            </div>
+        </div>
+        <div id="event-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Random Event</h3>
+                <p id="event-description"></p>
+                <button onclick="closeEventModal()" class="game-button">OK</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
