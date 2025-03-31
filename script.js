@@ -178,6 +178,16 @@ function endGame() {
     const gameOverDiv = document.getElementById('game-over');
     const winnerText = document.getElementById('winner-text');
     winnerText.textContent = `The winner is: ${winner} with a score of ${highestScore}!`;
+
+    // Generate leaderboard
+    const leaderboard = document.getElementById('leaderboard');
+    leaderboard.innerHTML = '<h3>Leaderboard</h3>';
+    const participants = [{ name: 'You', score: playerScore }, ...bots.map((bot, index) => ({ name: `Bot ${index + 1}`, score: botScores[index] }))];
+    participants.sort((a, b) => b.score - a.score);
+    participants.forEach(participant => {
+        leaderboard.innerHTML += `<p>${participant.name}: ${participant.score} points</p>`;
+    });
+
     gameOverDiv.style.display = 'block';
     document.getElementById('fortune-button').disabled = true;
 }
