@@ -41,14 +41,15 @@ function initCharacterSelection() {
 
 // Character Selection
 function selectCharacter(name) {
-    playerCharacter = characters[name];
+    playerCharacter = { name, ...characters[name] }; // Add the name property explicitly
     alert(`You selected ${name}!`);
     
     // Initialize Bots
     bots = []; // Clear previous bots
     for (let i = 0; i < 3; i++) {
-        const randomCharacter = characters[Object.keys(characters)[Math.floor(Math.random() * Object.keys(characters).length)]];
-        bots.push({ name: `Bot${i + 1}`, ...randomCharacter });
+        const randomCharacterKey = Object.keys(characters)[Math.floor(Math.random() * Object.keys(characters).length)];
+        const randomCharacter = characters[randomCharacterKey];
+        bots.push({ name: `Bot${i + 1}`, ...randomCharacter }); // Copy all properties, including oxygen
     }
 
     // Enable buttons and display status
