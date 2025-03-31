@@ -3,11 +3,16 @@ body {
     background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
 }
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    width: 90%; /* Responsive width */
+    margin: 20px auto; /* Add margin for spacing */
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -17,6 +22,7 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .status-display {
@@ -41,21 +47,27 @@ h1 {
     margin-bottom: 8px;
     position: relative;
     overflow: hidden;
+    background-color: #eee; /* Light background for the bar */
+}
+
+.health, .energy, .oxygen {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease; /* Smooth transition */
 }
 
 .health {
-    background-color: #76c7c0; /* Health bar color */
-    width: calc(var(--health-percent));
+    background-color: #76c7c0;
 }
 
 .energy {
-    background-color: #f2a900; /* Energy bar color */
-    width: calc(var(--energy-percent));
+    background-color: #f2a900;
 }
 
 .oxygen {
-    background-color: #007bff; /* Oxygen bar color */
-    width: calc(var(--oxygen-percent));
+    background-color: #007bff;
 }
 
 .game-button {
@@ -69,11 +81,12 @@ h1 {
     color: white;
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .game-button:hover:enabled {
     background-color: #218838;
+    transform: translateY(-2px);
 }
 
 .game-over {
@@ -81,4 +94,28 @@ h1 {
     font-size: 20px;
     color: #d9534f;
     margin-top: 20px;
-}                                      
+}
+
+.event-message {
+    padding: 10px;
+    background-color: #ffefd5;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+#leaderboard-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#leaderboard-link:hover {
+    background-color: #0056b3;
+}
